@@ -1,0 +1,81 @@
+body {
+  margin: 0 0;
+  padding: 0 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  cursor: default;
+}
+
+.feed {
+  background: #34495E;
+  width: 500px;
+  border-radius: 5px;
+}
+
+ul {
+    margin: 0 -40px;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+    padding: 30px;
+    width: 460px;
+    transition: all .3s ease;
+    color: #FFF;
+    font-size: 16px;
+}
+
+li:hover {
+    background: #2C3E50;
+}
+
+.check {
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    width: 15px;
+    height: 15px;
+    margin: 0 20px;
+    float: right;
+    transition: all .3s ease;
+    cursor: default;
+    padding: 3px;
+}
+
+.remove {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 15px;
+    height: 15px;
+    float: right;
+    margin: 0 0;
+    background-position: center;
+    background-size: 10px;
+    transition: all .3s ease;
+    cursor: default;
+    padding: 4px;
+}
+
+.remove:hover {
+    background: #B43C52;
+    padding: 4px;
+    cursor: default;
+}
+
+.selected {
+    background: url(../../assets/images/check.png) #B43C52;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    background-position: center;
+    background-size: 10px;
+    transition: all .3s ease;
+    border: 1px solid #B43C52;
+    cursor: default;
+}
+
+a{
+    font: normal 26px 'Source Sans Pro';
+    color: #ffffff;
+}

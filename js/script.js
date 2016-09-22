@@ -1,5 +1,5 @@
 $(function(){
-    var ul = $('.flipster ul');
+    var ul = $('.feed ul');
     
     $.get('https://news.ycombinator.com/rss', function (response) {
 
@@ -9,22 +9,22 @@ $(function(){
 
         rss.find('item').each(function () {
             var item = $(this);
-//item.context.innerHTML
-//            var content = item.find('encoded').html().split('</a></div>')[0] + '</a></div>';
-//            var urlRegex = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/g;
-//
-//            // Fetch the first image of the article.
-//            var imageSource = content.match(urlRegex)[1];
-
+            var itemHtml = item.context.innerHTML;
+            
+            var title =  itemHtml.match(/<title[^>]*>([^<]+)<\/title>/)[1];
+            var url = itemHtml.match(/<link[^>]*>([^<]+)<\/link>/)[1];
+            var date = itemHtml.match(/<pubDate[^>]*>([^<]+)<\/pubDate>/)[1];
 
             // Create a li item for every article, and append it to the unordered list.
-            var li = $('<li>'+item.context.innerHTML+'<img /><a target="_blank"></a></li>');
+            var li = $('<li></li>');
+            var li = $('<li><a target="_blank"></a><div class="pubDate"></div></li>');
 
-//            li.find('a')
-//                .attr('href', item.find('link').text())
-//                .text(item.find("title").text());
-
-//            li.find('img').attr('src', imageSource);
+            li.find('a')
+                .attr('href', url)
+                .text(title);
+            
+            li.find('div')
+                .text(date);
 
             li.appendTo(ul);
         });
