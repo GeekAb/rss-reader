@@ -1,5 +1,5 @@
 $(function(){
-    var ul = $('.feed ul');
+    var ul = $('.message-list');
     
     $.get('https://news.ycombinator.com/rss', function (response) {
 
@@ -16,14 +16,16 @@ $(function(){
             var date = itemHtml.match(/<pubDate[^>]*>([^<]+)<\/pubDate>/)[1];
 
             // Create a li item for every article, and append it to the unordered list.
-            var li = $('<li></li>');
-            var li = $('<li><a target="_blank"></a><div class="pubDate"></div></li>');
+            
+            var li = $('<li class="unread"><div class="col col-1"><span class="dot"></span><div class="checkbox-wrapper"><input type="checkbox" id="chk1"><label for="chk1" class="toggle"></label></div><span class="star-toggle glyphicon glyphicon-star-empty"></span></div><div class="col col-2"><a href="#" target="_blank"><div class="subject"></div></a><div class="date"></div></div></li>');
 
             li.find('a')
-                .attr('href', url)
+                .attr('href', url);
+            
+            li.find('div.subject')
                 .text(title);
             
-            li.find('div')
+            li.find('div.date')
                 .text(date);
 
             li.appendTo(ul);
