@@ -17,7 +17,7 @@ $(function(){
 
             // Create a li item for every article, and append it to the unordered list.
             
-            var li = $('<li class="unread"><div class="col col-1"><span class="dot"></span><div class="checkbox-wrapper"><input type="checkbox" id="chk1"><label for="chk1" class="toggle"></label></div><span class="star-toggle glyphicon glyphicon-star-empty"></span></div><div class="col col-2"><a href="#" target="_blank"><div class="subject"></div></a><div class="date"></div></div></li>');
+            var li = $('<li class="unread"><div class="col col-1"><span class="dot"></span><div class="checkbox-wrapper"><input type="checkbox" id="chk1"><label for="chk1" class="toggle"></label></div><span class="star-toggle glyphicon glyphicon-star-empty"></span></div><div class="col col-2"><a href="#"><div class="subject"></div></a><div class="date"></div></div></li>');
 
             li.find('a')
                 .attr('href', url);
